@@ -1,0 +1,64 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class GuidedGun : SimpleGun
+{
+    public GameObject shootOutBullet;
+    // Start is called before the first frame update
+    void Start()
+    {
+        fx = new Func();
+        if (!string.IsNullOrEmpty(firstFuncStr))
+        {
+            fx.setFunc(firstFuncStr);
+        }
+        
+        axis = transform.GetChild(0).gameObject;
+    }
+    public override GameObject Shoot()
+    {
+        if(shootOutBullet == null)
+        {
+            shootOutBullet = base.Shoot();
+            //Debug.Log(fx.ToString());
+            shootOutBullet.GetComponent<GuidedBullet>().SetFunc(fx);
+            
+            
+        }
+        //Debug.Log("shootG");
+        return shootOutBullet;
+    }
+    public void ShootBtn()
+    {
+        if (transform.parent.GetComponent<MyAirDefense>().is²elected)
+        {
+            
+            Shoot();
+            
+        }
+        
+    }
+    public void SetFunc(string text)
+    {
+        fx.setFunc(text);
+
+        
+        if (shootOutBullet != null)
+        {
+            shootOutBullet.GetComponent<GuidedBullet>().SetFunc(fx);
+        }
+    }
+    public void SetFunc(Text text)
+    {
+        Debug.Log("Seted " + fx.ToString());
+        SetFunc(text.text);
+        
+    }
+    // Update is called once per frame
+    //void Update()
+    //{
+        
+    //}
+}
