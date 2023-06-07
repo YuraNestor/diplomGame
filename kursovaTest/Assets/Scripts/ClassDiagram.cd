@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ADComplex" Collapsed="true">
+    <Position X="12.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAEACAABAAEAAAAAAAYAAAACAAAQAAAAAAAAII=</HashCode>
+      <FileName>Assets\Scripts\ADComplex.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Airport" Collapsed="true">
+    <Position X="14.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAAAAACAAIAgAAAAAAAAAACAAAAAAAAQAAAAgAAA=</HashCode>
+      <FileName>Assets\Scripts\Airport.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bubuh" Collapsed="true">
+    <Position X="16" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Bubuh.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ControlPanel" Collapsed="true">
+    <Position X="17.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACgIADAAiCAAYAAAAAAAAAAAAAEAAAAIQAAEIACAAA=</HashCode>
+      <FileName>Assets\Scripts\ControlPanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExampleOnPanel" Collapsed="true">
+    <Position X="19.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ExampleOnPanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Func" Collapsed="true">
+    <Position X="12.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAEAAAAAAACQQEAwAAAQAAAAAAAAAEAAAAMAAAIAA=</HashCode>
+      <FileName>Assets\Scripts\Func.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameOverText" Collapsed="true">
+    <Position X="14.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQACAAAACAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameOverText.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GuidedBullet" Collapsed="true">
+    <Position X="9.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Assets\Scripts\GuidedBullet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GuidedGun" Collapsed="true">
+    <Position X="3" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAACAABAAAAAAAAAAAAAAAAAAAAAAAACAAABA=</HashCode>
+      <FileName>Assets\Scripts\GuidedGun.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jet" Collapsed="true">
+    <Position X="16" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAgAACAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Jet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainCharacter" Collapsed="true">
+    <Position X="1" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MainCharacter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Menu" Collapsed="true">
+    <Position X="17.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAgAAAAAAEAAAAAAAAAAAAAIAAAAAACgAA=</HashCode>
+      <FileName>Assets\Scripts\Menu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiniConsole" Collapsed="true">
+    <Position X="19.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQBAAAAACAAAAAAAAAAAAAAAAIAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MiniConsole.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="move" Collapsed="true">
+    <Position X="12.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQAEAAAACAAAARBAgAAAAAAAAAAAQEAAAAAAAAAACA=</HashCode>
+      <FileName>Assets\Scripts\move.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyAirDefense" Collapsed="true">
+    <Position X="5.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAQACAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MyAirDefense.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NavigationMissile" Collapsed="true">
+    <Position X="14.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAEIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\NavigationMissile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PhysicalGameObject" Collapsed="true">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAACIAgAAAAAAAAAAAQBQAAAAIAAAgQAIAAQA=</HashCode>
+      <FileName>Assets\Scripts\PhysicalGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerPlant" Collapsed="true">
+    <Position X="3.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\PowerPlant.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem" Collapsed="true">
+    <Position X="16" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAACAAAAAAAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\PowerSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RadarTarget" Collapsed="true">
+    <Position X="17.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQACAAAACAAACAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\RadarTarget.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleBullet" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACQAAAQAIAEAACAACAAhAQEAAAQIAAAAAgA=</HashCode>
+      <FileName>Assets\Scripts\SimpleBullet.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SimpleGun" Collapsed="true">
+    <Position X="3" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAhAAAAAEAAAAgAAAAAAAAARABAAAAEAA=</HashCode>
+      <FileName>Assets\Scripts\SimpleGun.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SoundPlayer" Collapsed="true">
+    <Position X="19.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAgACABAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\SoundPlayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StupidBullet" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQBAAAABCQAAAQAAAkIAAAACAAAAQAAAAAIEAAAEgA=</HashCode>
+      <FileName>Assets\Scripts\StupidBullet.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="StupidGun" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACEAhAAAAAAAAAAAAAAAAAAAABABAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\StupidGun.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.298" />
+  </Class>
+  <Class Name="WarShip" Collapsed="true">
+    <Position X="12.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAgAACAAIAAAAAAAAAAAAAAEAAABAQQAAQAgAAA=</HashCode>
+      <FileName>Assets\Scripts\WarShip.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="IBullet" Collapsed="true">
+    <Position X="12.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\Scripts\IBullet.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IGun" Collapsed="true">
+    <Position X="14.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\IGun.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

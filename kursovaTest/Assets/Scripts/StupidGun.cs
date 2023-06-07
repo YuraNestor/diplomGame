@@ -14,6 +14,10 @@ public class StupidGun : MonoBehaviour, IGun
     {
         
     }
+    public void ChangeBullet(GameObject newBullet)
+    {
+        bullet = newBullet;
+    }
     public virtual GameObject Shoot()
     {
         var sBullet = bullet.GetComponent<StupidBullet>();

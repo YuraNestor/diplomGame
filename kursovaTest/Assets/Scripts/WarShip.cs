@@ -5,12 +5,13 @@ using UnityEngine;
 public class WarShip : MonoBehaviour
 {
     public float KD = 1;
+    public float kdMultiplier = 4;
     private float t = 0;
     public int zalp = 4;
     private int z = 0;
     private Animation anim;
     private string[] animationNames = {"warShipCome", "warShipLeave"};
-    private int krok=0;
+    private int krok=6;
     // Start is called before the first frame update
     void Start()
     {
@@ -67,7 +68,7 @@ public class WarShip : MonoBehaviour
                 break;
             case 6:
                 t += Time.deltaTime;
-                if (t > KD * 4)
+                if (t > KD * kdMultiplier)
                 {
                     krok = 0;
                     t= 0;  

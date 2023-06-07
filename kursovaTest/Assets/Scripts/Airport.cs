@@ -8,11 +8,17 @@ public class Airport : MonoBehaviour
     public float t = 0;
     public string[] funcStrings;
     private GameObject flyOutJet;
+    public float kdMultiplier=1;
 
     // Start is called before the first frame update
     void Start()
     {
         
+    }
+
+    public void KDMultiplier(float multiplier)
+    {
+        kdMultiplier = multiplier;
     }
 
     // Update is called once per frame
@@ -29,9 +35,10 @@ public class Airport : MonoBehaviour
                 }
 
                 flyOutJet=GetComponentInChildren<IGun>().Shoot();
+                kdMultiplier = 1;
 
             }
-            else if (t >= KD)
+            else if (t >= KD*kdMultiplier)
             {
                 t = 0;
                 return;

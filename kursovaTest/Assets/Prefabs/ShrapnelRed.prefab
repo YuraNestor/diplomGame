@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4266653440252265583}
   m_Layer: 0
   m_Name: ShrapnelRed
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4886,8 +4886,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 10
   HP: 10
+  destroyDeley: 0
   damage: 1
   onDestroy:
+    m_PersistentCalls:
+      m_Calls: []
+  onDamage:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &4266653440252265583

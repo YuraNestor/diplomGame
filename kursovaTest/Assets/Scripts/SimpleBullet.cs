@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SimpleBullet : PhysicalGameObject
+public class SimpleBullet : PhysicalGameObject, IBullet
 {
     public Func func;
     public float speed=1;
@@ -15,7 +15,10 @@ public class SimpleBullet : PhysicalGameObject
     private float t=0.02f;
     public Transform enemyTarget;
     //public float nextX;
-    
+    public void SetEnemyTarget(GameObject enemyTarget)
+    {
+        this.enemyTarget = enemyTarget.transform;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +30,9 @@ public class SimpleBullet : PhysicalGameObject
     }
     protected void RotateToDir()
     {
-        Vector2 dir = transform.localPosition - preLocalPosition;
+        
+        
+        Vector2 dir = target - (Vector2)transform.localPosition /*- preLocalPosition*/;
         
         float rotate = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         //float curentRotation = transform.localRotation.eulerAngles.z;
@@ -43,10 +48,20 @@ public class SimpleBullet : PhysicalGameObject
         if(enemyTarget != null)
         {
             target = enemyTarget.position;
-            var zAngle = transform.localRotation.eulerAngles.z;
-            transform.SetParent(null);
-            transform.localRotation = Quaternion.Euler(0, 0, zAngle);
+            if(transform.parent != null)
+            {
+                speed /= 2;
+                var zAngle = transform.localRotation.eulerAngles.z;
+                transform.SetParent(null);
+                transform.localRotation = Quaternion.Euler(0, 0, zAngle);
+            }
+            
             return;
+        }
+        else if(transform.parent == null)
+        {
+            DestroyMe();
+            
         }
         float x = transform.localPosition.x;
         //transform.localPosition = new Vector2(x, func.F(x));
@@ -74,10 +89,10 @@ public class SimpleBullet : PhysicalGameObject
         }
         t+=Time.deltaTime;
         step++;
-        float distance = Vector2.Distance(transform.localPosition, target);
-        if (distance / targetFindingStep > speed * Time.deltaTime)
-            distance = Mathf.Abs(speed * Time.deltaTime * targetFindingStep);
-        transform.localPosition = Vector2.MoveTowards(transform.localPosition, target, distance/targetFindingStep);
+        //float distance = Vector2.Distance(transform.localPosition, target);
+        //if (distance / targetFindingStep > speed * Time.deltaTime)
+        //    distance = Mathf.Abs(speed * Time.deltaTime /** targetFindingStep*/);
+        transform.localPosition = Vector2.MoveTowards(transform.localPosition, target, speed * Time.deltaTime /*distance / targetFindingStep*/);
 
         RotateToDir();
         preLocalPosition = transform.localPosition;

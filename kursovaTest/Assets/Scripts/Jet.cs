@@ -7,10 +7,16 @@ public class Jet : MonoBehaviour
     public float KD = 6;
     public float timer;
     public int zalp=1;
+    
     // Start is called before the first frame update
     void Start()
     {
+        Airport airport = GetComponentInParent<Airport>();
         timer = Random.Range(0.01f, KD/2);
+        GetComponent<PhysicalGameObject>().onDestroy.AddListener(() => { airport.KDMultiplier(2); });
+        var cp = GameObject.Find("CONTROLPANEL").GetComponent<ControlPanel>();
+        if (cp != null)
+            GetComponent<PhysicalGameObject>().addPoints.AddListener(() => { cp.AddOnePoint(); });
     }
 
     // Update is called once per frame

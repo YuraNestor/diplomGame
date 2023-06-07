@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class ADComplex : MonoBehaviour
@@ -11,7 +12,8 @@ public class ADComplex : MonoBehaviour
     private Text info;
     [SerializeField]
     private InputField inputField;
-
+    [SerializeField]
+    private UnityEvent onGameOver;
     public void SelectAD(GameObject ad)
     {
         UnselectAllAD();
@@ -45,7 +47,8 @@ public class ADComplex : MonoBehaviour
         if(selectedAD != null)
         {
             var shootOutBullet =selectedAD.GetComponentInChildren<SimpleGun>().Shoot();
-            Debug.Log("launched " + shootOutBullet.GetComponent<GuidedBullet>().func.ToString());
+            if (shootOutBullet != null)
+                Debug.Log("launched " + shootOutBullet.GetComponent<GuidedBullet>().func.ToString());
         }
         else
         {
@@ -58,11 +61,18 @@ public class ADComplex : MonoBehaviour
     {
         
     }
-    
+    public void gameOver()
+    {
+        onGameOver?.Invoke();
+    }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (transform.childCount == 0)
+        {
+            gameOver();
+            gameObject.SetActive(false);
+        }
     }
 }

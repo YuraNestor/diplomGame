@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1088231635361132684}
   m_Layer: 8
   m_Name: rapira2
-  m_TagString: Untagged
+  m_TagString: FriendBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 1
   HP: 1
+  destroyDeley: 0
   damage: 0
   onDestroy:
     m_PersistentCalls:
@@ -130,9 +131,14 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onDamage:
+    m_PersistentCalls:
+      m_Calls: []
   speed: 3
   axis: {fileID: 0}
-  preLocalPosition: {x: 0, y: 0, z: 0}
+  target: {x: 0, y: 0}
+  targetFindingStep: 10
+  enemyTarget: {fileID: 0}
 --- !u!50 &1848595509190717259
 Rigidbody2D:
   serializedVersion: 4

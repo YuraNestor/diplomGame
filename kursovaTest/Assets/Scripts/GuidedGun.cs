@@ -24,21 +24,19 @@ public class GuidedGun : SimpleGun
             shootOutBullet = base.Shoot();
             //Debug.Log(fx.ToString());
             shootOutBullet.GetComponent<GuidedBullet>().SetFunc(fx);
-            
-            
+            return shootOutBullet;
+
+        }
+        else
+        {
+            return null;
         }
         //Debug.Log("shootG");
-        return shootOutBullet;
+        
     }
     public void ShootBtn()
     {
-        if (transform.parent.GetComponent<MyAirDefense>().is²elected)
-        {
-            
-            Shoot();
-            
-        }
-        
+         Shoot();       
     }
     public void SetFunc(string text)
     {

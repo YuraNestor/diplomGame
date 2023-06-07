@@ -9,6 +9,10 @@ public class GuidedBullet : SimpleBullet
 
     public void SetFunc(Func func)
     {
+        if (enemyTarget != null)
+        {
+            return;
+        }
         this.func = func;
         if (axis)
         {

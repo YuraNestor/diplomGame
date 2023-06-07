@@ -16,7 +16,7 @@ public class SimpleGun : MonoBehaviour, IGun
     public virtual GameObject Shoot()
     {
         var sBullet = bullet.GetComponent<SimpleBullet>();
-        sBullet.speed = startSpeed;
+        //sBullet.speed = startSpeed;
         //sBullet.axis=axis;
         //sBullet.func = fx;
         fx.ResetFuncMemory();

@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class MiniConsole : MonoBehaviour
 {
     private List<string> lines = new List<string>();
-    
+    private static string startString = "Air targets destroyed: ";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,12 +24,17 @@ public class MiniConsole : MonoBehaviour
         }
         
         
-        string s=string.Empty;
+        string s=startString;
+        s+=GetComponentInParent<ControlPanel>().GetPoints().ToString()+"\n";
         foreach(string line in lines)
         {
             s += line+"\n";
         }
         GetComponent<Text>().text = s;
+    }
+    private void OnDestroy()
+    {
+        Application.logMessageReceivedThreaded -= LogHandler;
     }
     // Update is called once per frame
     void Update()

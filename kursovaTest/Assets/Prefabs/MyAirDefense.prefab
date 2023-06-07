@@ -76,6 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9d12766e8acada44b70068e488451b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstFuncStr: 
   damage: 1
   startSpeed: 3
   bullet: {fileID: 457141314848003045, guid: 49a32126a7b026f4cb021074865b1475, type: 3}
@@ -97,7 +98,7 @@ GameObject:
   - component: {fileID: 6535510550811622562}
   m_Layer: 6
   m_Name: MyAirDefense
-  m_TagString: Untagged
+  m_TagString: Friend
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -245,8 +246,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 1
   HP: 1
+  destroyDeley: 0
   damage: 1
   onDestroy:
+    m_PersistentCalls:
+      m_Calls: []
+  onDamage:
     m_PersistentCalls:
       m_Calls: []
   "is\u0406elected": 0

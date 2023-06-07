@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
-    internal interface IGun
-    {
-        public GameObject Shoot();
-    }
+internal interface IGun
+{
+    public GameObject Shoot();
+}
 

@@ -15,6 +15,8 @@ public class PhysicalGameObject : MonoBehaviour
     public UnityEvent onDestroy;
 
     public UnityEvent onDamage;
+
+    public UnityEvent addPoints;
     public PhysicalGameObject()
     {
         HP = maxHP;
@@ -50,6 +52,7 @@ public class PhysicalGameObject : MonoBehaviour
     //}
     private void OnBecameInvisible()
     {
+        
         Destroy(gameObject, destroyDeley);
     }
 
@@ -72,6 +75,11 @@ public class PhysicalGameObject : MonoBehaviour
             //    GameObject bubuhh = Instantiate(bubuh, transform.position, Quaternion.identity);
             //    Destroy(bubuhh, 0.3f);
             //}
+            if (collision.gameObject.tag=="FriendBullet" && gameObject.tag=="Enemy")
+            {
+                addPoints?.Invoke();
+                
+            }
             DestroyMe();
 
 
@@ -91,6 +99,11 @@ public class PhysicalGameObject : MonoBehaviour
             //    GameObject bubuhh = Instantiate(bubuh, transform.position, Quaternion.identity);
             //    Destroy(bubuhh, 0.3f);
             //}
+            if (other.tag == "FriendBullet" && gameObject.tag == "Enemy")
+            {
+                addPoints?.Invoke();
+                
+            }
             DestroyMe();
 
         }
