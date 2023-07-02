@@ -1,3 +1,3 @@
 # diplomGame
 Math Game
-coperating
+
