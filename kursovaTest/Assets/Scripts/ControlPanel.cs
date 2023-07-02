@@ -16,6 +16,7 @@ public class ControlPanel : MonoBehaviour
     [SerializeField]
     private int toWinPoints=15;
     public GameObject povistka;
+    public InterstitialAd ad;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,24 +24,39 @@ public class ControlPanel : MonoBehaviour
         hightPoints = PlayerPrefs.GetInt("hs", 0);
         if (hightPoints >= toWinPoints)
             toWinPoints += hightPoints;
-    }
-    
+    }    
     public void Pause()
     {
+        ad.LoadAd();
         if(!anim.isPlaying)
             StartCoroutine(CorotinePause());
-    }
+    }    
     public void Again()
     {
         SceneManager.LoadScene("Radar");
         AudioListener.pause = false;
+        var dies = PlayerPrefs.GetInt("d", 0);
+        dies++;
+        PlayerPrefs.SetInt("d", dies);
+        if (dies == 3)
+        {
+            ad.ShowAd();
+            PlayerPrefs.SetInt("d", 0);
+        }
     }
     public void GoToMainMenu()
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("MENU");
         AudioListener.pause = false;
-        
+        var dies = PlayerPrefs.GetInt("d", 0);
+        dies++;
+        PlayerPrefs.SetInt("d", dies);
+        if (dies == 3)
+        {
+            ad.ShowAd();
+            PlayerPrefs.SetInt("d", 0);
+        }
     }
     public void Exit()
     {
@@ -92,7 +108,5 @@ public class ControlPanel : MonoBehaviour
         Time.timeScale = 0;
         yield return new WaitForSecondsRealtime(2f);
         povistka.transform.GetChild(0).gameObject.SetActive(true);
-
-
     }
 }

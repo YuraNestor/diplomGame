@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class GuidedBullet : SimpleBullet
 {
-    //public GameObject axis;
-    // Start is called before the first frame update
-
     public void SetFunc(Func func)
     {
         if (enemyTarget != null)
@@ -16,28 +13,22 @@ public class GuidedBullet : SimpleBullet
         this.func = func;
         if (axis)
         {
-            //Target();
-            float x = transform.localPosition.x;
-            transform.localPosition = new Vector2(x, func.F(x));
+            func.UpdateXY(transform.localPosition);
             axis.transform.localPosition = func.AxisDisplacement(axis.transform.localPosition);
-            
-            //Target();
-            
+            float x = transform.localPosition.x;
+            transform.localPosition = new Vector2(x, func.F(x));            
         }
-        
     }
     void Start()
     {
         if(func==null)
             func = new Func();
-        //nextX=0;
         axis = transform.parent.gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
         OneStepMove();
     }
 }

@@ -13,8 +13,7 @@ public class GuidedGun : SimpleGun
         if (!string.IsNullOrEmpty(firstFuncStr))
         {
             fx.setFunc(firstFuncStr);
-        }
-        
+        }        
         axis = transform.GetChild(0).gameObject;
     }
     public override GameObject Shoot()
@@ -22,17 +21,13 @@ public class GuidedGun : SimpleGun
         if(shootOutBullet == null)
         {
             shootOutBullet = base.Shoot();
-            //Debug.Log(fx.ToString());
             shootOutBullet.GetComponent<GuidedBullet>().SetFunc(fx);
             return shootOutBullet;
-
         }
         else
         {
             return null;
-        }
-        //Debug.Log("shootG");
-        
+        }        
     }
     public void ShootBtn()
     {
@@ -40,9 +35,7 @@ public class GuidedGun : SimpleGun
     }
     public void SetFunc(string text)
     {
-        fx.setFunc(text);
-
-        
+        fx.setFunc(text);        
         if (shootOutBullet != null)
         {
             shootOutBullet.GetComponent<GuidedBullet>().SetFunc(fx);
@@ -52,11 +45,5 @@ public class GuidedGun : SimpleGun
     {
         Debug.Log("Seted " + fx.ToString());
         SetFunc(text.text);
-        
     }
-    // Update is called once per frame
-    //void Update()
-    //{
-        
-    //}
 }

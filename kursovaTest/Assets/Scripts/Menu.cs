@@ -11,7 +11,7 @@ public class Menu : MonoBehaviour
     void Start()
     {
         playerName = PlayerPrefs.GetString("name", string.Empty);
-        
+        //PlayerPrefs.SetString("name", string.Empty);
     }
 
     public void StartNewGame()

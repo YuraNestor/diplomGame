@@ -14,7 +14,6 @@ public class SimpleBullet : PhysicalGameObject, IBullet
     private int step = 0;
     private float t=0.02f;
     public Transform enemyTarget;
-    //public float nextX;
     public void SetEnemyTarget(GameObject enemyTarget)
     {
         this.enemyTarget = enemyTarget.transform;
@@ -23,25 +22,15 @@ public class SimpleBullet : PhysicalGameObject, IBullet
     void Start()
     {
         if (func == null)
-            func = new Func();
-        //nextX=0;
-        
+            func = new Func();       
         axis = transform.parent.gameObject;
     }
     protected void RotateToDir()
-    {
-        
-        
-        Vector2 dir = target - (Vector2)transform.localPosition /*- preLocalPosition*/;
-        
+    {      
+        Vector2 dir = target - (Vector2)transform.localPosition /*- preLocalPosition*/;        
         float rotate = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        //float curentRotation = transform.localRotation.eulerAngles.z;
         Quaternion q = Quaternion.Euler(0, 0, rotate);
-        transform.localRotation = Quaternion.Lerp(transform.localRotation, q, Mathf.Abs(speed * Time.deltaTime));
-        //transform.localRotation = Quaternion.Euler(0, 0, rotate);
-
-        //Debug.Log("rotate "+rotate);
-        //Debug.Log("dir "+dir);
+        transform.localRotation = Quaternion.Lerp(transform.localRotation, q, Mathf.Abs(speed * Time.deltaTime));       
     }
     public void Target()
     {
@@ -54,21 +43,15 @@ public class SimpleBullet : PhysicalGameObject, IBullet
                 var zAngle = transform.localRotation.eulerAngles.z;
                 transform.SetParent(null);
                 transform.localRotation = Quaternion.Euler(0, 0, zAngle);
-            }
-            
+            }            
             return;
         }
         else if(transform.parent == null)
         {
-            DestroyMe();
-            
+            DestroyMe();            
         }
         float x = transform.localPosition.x;
-        //transform.localPosition = new Vector2(x, func.F(x));
-        //Debug.Log("x+ ="+speed * Time.deltaTime * targetFindingStep /*/ (1 + Math.Abs(func.FuncSpeed(x)))*/);
-        x += speed * t /*/ (1 + Math.Abs(func.FuncSpeed(x)))*/;
-        
-        //x += speed * Time.deltaTime * targetFindingStep;
+        x += speed * t;
         target = new Vector2(x, func.F(x));
     }
     
@@ -76,7 +59,6 @@ public class SimpleBullet : PhysicalGameObject, IBullet
     {
         //float x = transform.localPosition.x;
         //x += speed * Time.deltaTime / (1 + Math.Abs(func.FuncSpeed(x)));
-
         //transform.localPosition = new Vector3(x, func.F(x));
         if (step == 0)
         {
@@ -89,24 +71,13 @@ public class SimpleBullet : PhysicalGameObject, IBullet
         }
         t+=Time.deltaTime;
         step++;
-        //float distance = Vector2.Distance(transform.localPosition, target);
-        //if (distance / targetFindingStep > speed * Time.deltaTime)
-        //    distance = Mathf.Abs(speed * Time.deltaTime /** targetFindingStep*/);
-        transform.localPosition = Vector2.MoveTowards(transform.localPosition, target, speed * Time.deltaTime /*distance / targetFindingStep*/);
-
+        transform.localPosition = Vector2.MoveTowards(transform.localPosition, target, speed * Time.deltaTime);
         RotateToDir();
-        preLocalPosition = transform.localPosition;
-        //Outrun();
+        preLocalPosition = transform.localPosition;        
     }
     // Update is called once per frame
     void Update()
     {
         OneStepMove();
-        
-        //float x = transform.localPosition.x;
-        //x+= speed * Time.deltaTime /( 1 + Math.Abs(func.FuncSpeed(x)));
-        //transform.localPosition=new Vector3(x, func.F(x));
-        
-        //nextX+= speed * Time.deltaTime / (1 + Math.Abs(func.FuncSpeed(nextX)));
     }
 }

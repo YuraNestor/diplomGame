@@ -8,14 +8,9 @@ public class PhysicalGameObject : MonoBehaviour
     public int maxHP=1;
     public int HP;
     public float destroyDeley;
-    //public static float maxY=0;
-    //public static float maxX=0;
     public int damage=1;
-    //public GameObject bubuh;
     public UnityEvent onDestroy;
-
     public UnityEvent onDamage;
-
     public UnityEvent addPoints;
     public PhysicalGameObject()
     {
@@ -24,15 +19,6 @@ public class PhysicalGameObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //if (maxY == 0)
-        //{
-        //    Debug.Log("RectTransform");
-        //    //var rt= 
-        //    RectTransform rectTransform = GameObject.Find("Canvas").GetComponent<RectTransform>();
-        //    maxX = rectTransform.sizeDelta.x * rectTransform.pivot.x * rectTransform.localScale.x - 1;
-        //    maxY = rectTransform.sizeDelta.y * rectTransform.pivot.y * rectTransform.localScale.y - 1;
-        //}
-        
         HP = maxHP;
     }
     //protected void Outrun()
@@ -52,16 +38,13 @@ public class PhysicalGameObject : MonoBehaviour
     //}
     private void OnBecameInvisible()
     {
-        
         Destroy(gameObject, destroyDeley);
     }
 
     public void DestroyMe()
     {
         onDestroy?.Invoke();
-        
         Destroy(gameObject);
-
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -69,43 +52,24 @@ public class PhysicalGameObject : MonoBehaviour
         onDamage?.Invoke();
         if(HP <= 0)
         {
-
-            //if (bubuh != null)
-            //{
-            //    GameObject bubuhh = Instantiate(bubuh, transform.position, Quaternion.identity);
-            //    Destroy(bubuhh, 0.3f);
-            //}
             if (collision.gameObject.tag=="FriendBullet" && gameObject.tag=="Enemy")
             {
-                addPoints?.Invoke();
-                
+                addPoints?.Invoke(); 
             }
             DestroyMe();
-
-
         }
     }
     private void OnParticleCollision(GameObject other)
     {
-        
-        //Debug.Log(gameObject.name+" "+ other.name);
         HP -= other.gameObject.GetComponent<PhysicalGameObject>().damage;
         onDamage?.Invoke();
         if (HP <= 0)
         {
-
-            //if (bubuh != null)
-            //{
-            //    GameObject bubuhh = Instantiate(bubuh, transform.position, Quaternion.identity);
-            //    Destroy(bubuhh, 0.3f);
-            //}
             if (other.tag == "FriendBullet" && gameObject.tag == "Enemy")
             {
                 addPoints?.Invoke();
-                
             }
             DestroyMe();
-
         }
     }
 }

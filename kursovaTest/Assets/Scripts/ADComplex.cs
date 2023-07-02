@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class ADComplex : MonoBehaviour
 {
-
     private GameObject selectedAD;
     [SerializeField]
     private Text info;
@@ -55,17 +54,11 @@ public class ADComplex : MonoBehaviour
             info.text = "null";
             inputField.text = "connection lost";
         }
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    }    
     public void gameOver()
     {
         onGameOver?.Invoke();
     }
-
     // Update is called once per frame
     void Update()
     {

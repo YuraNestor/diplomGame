@@ -7,10 +7,11 @@ public class GameOverText : MonoBehaviour
 {
     public Text text;
     public float attenuationSpeed = 0.2f;
+    public InterstitialAd ad;
     // Start is called before the first frame update
     void Start()
     {
-        
+        ad.LoadAd();
     }
 
     // Update is called once per frame
@@ -25,6 +26,7 @@ public class GameOverText : MonoBehaviour
             AudioListener.pause = true;
             transform.GetChild(0).gameObject.SetActive(true);
             gameObject.GetComponent<GameOverText>().enabled = false;
+            ad.ShowAd();
         }
     }
 }

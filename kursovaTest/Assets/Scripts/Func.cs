@@ -22,18 +22,23 @@ public class Func
     }
     public void setFunc(string strFunction)
     {
-        if (function != null)
-        {
-            oldY = F(oldX);
-        }
+        //if (function != null)
+        //{
+        //    oldY = F(oldX);
+        //}
         this.strFunction= strFunction;
         function = new Function(strFunction);
         if (!validFunc(oldX))
         {
-            Debug.Log("Dura VVela ne pravilno");
+            Debug.Log("Failed function");
             function=new Function(lf);
             this.strFunction = lf;
         }
+    }
+    public void UpdateXY(Vector2 xy)
+    {
+        oldX= xy.x;
+        oldY = xy.y;
     }
     public Vector3 AxisDisplacement(Vector3 oldAxis)
     {
