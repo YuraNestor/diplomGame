@@ -1,5 +1,5 @@
 # diplomGame
-Math Dome
+
 The Math Dome game is a fantastic representation of an air defense system and demonstrates the difficulty of intercepting enemy missiles by predicting the trajectories of mathematical functions.
 #  Gameplay
 ![image](https://github.com/YuraNestor/diplomGame/assets/81146126/746d7280-ed9c-4a66-9852-a9c4cec93e55)
